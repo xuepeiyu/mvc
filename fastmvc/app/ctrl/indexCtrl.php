@@ -1,6 +1,6 @@
 <?php 
-   namespace app\ctrl;
-   class indexCtrl 
+namespace app\ctrl;
+class indexCtrl 
    {
 
        public function index()
@@ -11,6 +11,11 @@
              p($arr->fetchAll());
            
        }
+
+
+       // public function sell(){
+       //     echo 1;
+       // }
    }
 
 ?>

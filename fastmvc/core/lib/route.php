@@ -23,11 +23,7 @@ class route
 
                              $this->action = $patharr[1];
                               unset($patharr[1]);
-                        }else{
-
-                             $this->action=conf::get('ACTION','route');
-                        }                                                                                                            $patharr=explode('/',trim($path,'/')); 
-                   $count = count($patharr)+2;
+                        $count = count($patharr)+2;
                         $i = 2;
                         while ( $i < $count) {
                             if(isset($patharr[$i+1])){
@@ -36,10 +32,15 @@ class route
                              $_GET[$patharr[$i]] = $patharr[$i+1];
                             }
                              $i = $i + 2; 
-                        }
-                   //p($_GET); 
+                          }
+                        }else{
 
- }else{
+                             $this->action=conf::get('ACTION','route');
+                        }                                                                                                            $patharr=explode('/',trim($path,'/')); 
+                  
+                   //p($_GET); die;
+
+      }else{
 
                 $this->ctrl =conf::get('CTRL','route');
                 $this->action=conf::get('ACTION','route');

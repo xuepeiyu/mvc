@@ -7,11 +7,12 @@ class run
 	{
        //p('ok');
        $route = new \core\lib\route();
+       p($route);
        $ctrlClass = $route->ctrl;
        $action = $route->action;
        $ctrlfile = APP.'/ctrl/'.$ctrlClass.'Ctrl.php';
        $cltrlClass = '\\'.MODULE.'\ctrl\\'.$ctrlClass.'Ctrl';                                                                    
-       //p($ctrlClass);die;
+       p($ctrlClass);die;
        if(is_file($ctrlfile)){
 
               include $ctrlfile;
