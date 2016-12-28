@@ -6,6 +6,10 @@ class run
     public  $assign;
 	static public function dump()
 	{
+
+       \core\lib\log::init();
+       \core\lib\log::log('test');
+
        //p('ok');
        $route = new \core\lib\route();
        //p($route);
@@ -14,6 +18,7 @@ class run
        $ctrlfile = APP.'/ctrl/'.$ctrlClass.'Ctrl.php';
        $cltrlClass = '\\'.MODULE.'\ctrl\\'.$ctrlClass.'Ctrl';                                                                    
        //p($cltrlClass);die;
+
        if(is_file($ctrlfile)){
 
               include $ctrlfile;
@@ -52,7 +57,6 @@ class run
   //调用视图方法
   public  function display($file){
           $file = APP.'/views/'.$file;
-          //p($file);
           //p($this->assign);exit();
           if(is_file($file)){
               extract($this->assign);
